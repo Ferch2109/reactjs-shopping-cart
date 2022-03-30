@@ -1,31 +1,40 @@
-import React from 'react';
-import Cart from './containers/Cart';
-import ProductList from './containers/ProductList';
+import React from 'react'
+import { connect } from 'react-redux'
+import { createBrowserHistory } from "history"
+import MainRouter from './routes/router'
+import Topbar from './containers/Topbar'
+import { getSessionData } from './ducks/session'
+import LogIn from './containers/LogIn'
+
+const history = createBrowserHistory()
 
 const App = () => {
-    return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <h1>Virtual Shop</h1>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-8">
-                    <ProductList />
-                </div>
-                <div className="col-md-4">
-                    <Cart />
-                </div>
-            </div>
 
-            <footer>
-                <small>
-                    powered by <a href="http://www.kikoya.mx/">Kikoya</a>
-                </small>
-            </footer>
+    return (
+        <div>
+            <LogIn />
+            <Topbar history={history} />
+            <div className="container">
+                <MainRouter history={history} />
+                <footer>
+                    <small>
+                        powered by <a href="http://www.kikoya.mx/">Kikoya</a>
+                    </small>
+                </footer>
+            </div>
         </div>
-    );
+    )
 }
 
-export default App;
+
+const mapStateToProps = (state, props) => {
+    return {
+        getSessionData: getSessionData(state, props)
+    }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    //handleLogOut: (id) => dispatch(handleLogOut(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

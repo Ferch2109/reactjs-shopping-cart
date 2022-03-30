@@ -10,8 +10,6 @@ const initialState = {
     currency: 'MEX'
 };
 
-export function sum(a, b) { return a + b }
-
 export default function cart(state = initialState, action = {}) {
     switch (action.type) {
         case CART_ADD:

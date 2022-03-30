@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
 
-const Cart = ({ items, total, currency, removeFromCart }) => {
+const Cart = ({ history, items, total, currency, removeFromCart }) => {
+
+    const onBuy = () => history.push('/ticket')
+    
     return (
         <div>
             <h3>Shopping Cart</h3>
@@ -20,7 +23,16 @@ const Cart = ({ items, total, currency, removeFromCart }) => {
                         {items.length === 0 && (
                             <div className="alert alert-info">Cart is empty</div>
                         )}
-                        <div className="cart__total">Total: {total} {currency}</div>
+                        {total > 0 && <div className="cart__subtotal">Subtotal: {total} {currency}</div>}
+                        {total > 0 && <div className="cart__iva text-danger">+16% IVA</div>}
+                        <div className="cart__total">Total: {total + total * 0.16} {currency}</div>
+                        <button
+                            className='cart__button btn btn-danger'
+                            onClick={onBuy}
+                            disabled={!Boolean(total)}
+                        >
+                            Buy
+                        </button>
                     </div>
                 </div>
             </div>

@@ -12,3 +12,5 @@ const user = [
     password: '123456'
   }
 ]
+
+export default user;

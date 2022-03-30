@@ -34,3 +34,5 @@ const role_group = [
     ]
   }
 ]
+
+export default role_group

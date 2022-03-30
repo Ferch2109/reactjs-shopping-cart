@@ -18,9 +18,29 @@
   font-weight: bold;
 }
 
+.cart__subtotal {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.1em;
+  text-align: right;
+  color: grey;
+}
+
+.cart__iva {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.1em;
+  text-align: right;
+}
+
 .cart__total {
   font-weight: bold;
   font-size: 1.5em;
   line-height: 1.1em;
   text-align: right;
+}
+
+.cart__button {
+  margin-top: 20px;
+  width: 100%;
 }

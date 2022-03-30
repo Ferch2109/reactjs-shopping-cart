@@ -1,0 +1,102 @@
+.topbar-root {
+    width: 100%;
+    height: auto;
+    padding: 15px 32px;
+    margin-bottom: 30px;
+    background: #337ab7;
+    /*box-shadow: 2px 8px 17px -11px rgba(0, 0, 0, 0.88);*/
+    display: inline-flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.topbar-title {
+    margin: 0px;
+    font-size: 32px;
+    color: white;
+}
+
+.topbar-title:hover {
+    cursor: pointer
+}
+
+.topbar-button {
+    background: white;
+    color: #337ab7;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 4px;
+    padding: 0px 15px;
+}
+
+.topbar-avatar {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+}
+
+.topbar-menu {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+}
+
+.topbar-menu:hover {
+    cursor: pointer;
+}
+
+.topbar-menu-list {
+    position: absolute;
+    right: 32px;
+    bottom: 10px;
+    transform: translateY(100%);
+    background: white;
+    padding: 12px 0px;
+    border-radius: 8px;
+    box-shadow: 2px 8px 17px -11px rgba(0, 0, 0, 0.88);
+}
+
+.topbar-menu-list>span {
+    padding: 5px 12px;
+}
+
+.topbar-menu-list>span:hover {
+    cursor: pointer;
+    background: lightgray;
+}
+
+.topbar-user {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 100%;
+    position: relative;
+    margin-right: 5px;
+}
+
+.topbar-user>span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.topbar-list {
+    margin-right: 20px;
+}
+
+.topbar-list>span {
+    padding: 0px 20px;
+    font-size: 14px;
+}
+
+.topbar-list>span:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.border {
+    border-right: 1px solid white;
+}
